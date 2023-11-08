@@ -8,12 +8,7 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Container - Layouts | Vuexy - Bootstrap Admin Template</title>
-
     <meta name="description" content="" />
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon/favicon.ico') }}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -95,6 +90,14 @@
                             </li>
                         </ul>
                     </li>
+
+                    <li class="menu-item">
+                        <a href="{{ route('recipe.index') }}" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-mail"></i>
+                            <div data-i18n="Email">Recipes</div>
+                        </a>
+                    </li>
+
             </aside>
             <!-- / Menu -->
 
@@ -104,29 +107,6 @@
                 <!-- Footer -->
                 <footer class="content-footer footer bg-footer-theme">
                     <div class="container-xxl">
-                        <div
-                            class="footer-container d-flex align-items-center justify-content-between py-2 flex-md-row flex-column">
-                            <div>
-                                ©
-                                <script>
-                                    document.write(new Date().getFullYear());
-                                </script>
-                                , made with ❤️ by <a href="https://pixinvent.com" target="_blank"
-                                    class="fw-medium">Pixinvent</a>
-                            </div>
-                            <div class="d-none d-lg-inline-block">
-                                <a href="https://themeforest.net/licenses/standard" class="footer-link me-4"
-                                    target="_blank">License</a>
-                                <a href="https://1.envato.market/pixinvent_portfolio" target="_blank"
-                                    class="footer-link me-4">More Themes</a>
-
-                                <a href="https://demos.pixinvent.com/vuexy-html-admin-template/documentation/"
-                                    target="_blank" class="footer-link me-4">Documentation</a>
-
-                                <a href="https://pixinvent.ticksy.com/" target="_blank"
-                                    class="footer-link d-none d-sm-inline-block">Support</a>
-                            </div>
-                        </div>
                     </div>
                 </footer>
                 <!-- / Footer -->

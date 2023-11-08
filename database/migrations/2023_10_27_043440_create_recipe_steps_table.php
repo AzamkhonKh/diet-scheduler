@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('name');
             $table->integer('order')->default(0);
             $table->string('recipe_ids')->comment('stores array of ids with comma separated');
+            $table->integer('output_amount')->default(0);
+            $table->foreignId('unit_id')->constrained('units', 'id')->cascadeOnDelete();
             $table->timestamps();
             $table->unique(['order', 'recipe_id']);
         });
