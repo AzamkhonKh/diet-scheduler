@@ -11,6 +11,8 @@ class Recipe extends Model
 
     protected $fillable = [
         "name",
-        "comment"
+        "comment",
+        "output_amount",
+        "unit_id"
     ];
 }

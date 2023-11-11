@@ -23,24 +23,13 @@
         <!-- Content -->
 
         <div class="container-xxl flex-grow-1 container-p-y">
-            <h4 class="py-3 mb-4"><span class="text-muted fw-light"></span> Recipes</h4>
+            <h4 class="py-3 mb-4"><span class="text-muted fw-light"></span> Units</h4>
 
             <!-- Product List Table -->
             <div class="card">
-                <div class="card-header">
-                    <h5 class="card-title mb-0">Filter</h5>
-                    <div class="d-flex justify-content-between align-items-center row py-3 gap-3 gap-md-0">
-                        <div class="col-md-4 product_status"></div>
-                        <div class="col-md-4 product_category"></div>
-                        <div class="col-md-4 product_stock"></div>
-                    </div>
-                </div>
                 <div id="DataTables_Table_1_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
                     <div class="card-header d-flex border-top rounded-0 flex-wrap py-2">
                         <div class="me-5 ms-n2 pe-5">
-                            <div id="DataTables_Table_1_filter" class="dataTables_filter"><label><input type="search"
-                                        class="form-control" placeholder="Search Product"
-                                        aria-controls="DataTables_Table_1"></label></div>
                         </div>
                         <div class="d-flex justify-content-start justify-content-md-end align-items-baseline">
                             <div
@@ -49,26 +38,22 @@
                                 <div class="dt-buttons btn-group flex-wrap d-flex">
                                     <div class="btn-group">
                                     </div>
-                                    <a href={{ route('recipe.create') }}
+                                    <a href={{ route('unit.create') }}
                                         class="btn btn-secondary add-new btn-primary ms-2 ms-sm-0" tabindex="0"
                                         aria-controls="DataTables_Table_1" type="button">
                                         <span><i class="ti ti-plus me-0 me-sm-1 ti-xs"></i><span
-                                                class="d-none d-sm-inline-block">Add Product</span></span>
+                                                class="d-none d-sm-inline-block">Add Unit</span></span>
                                     </a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <table class="datatables-products table dataTable no-footer dtr-column" id="DataTables_Table_1"
+                    <table class="datatables-products table dataTable no-footer dtr-column " id="DataTables_Table_1"
                         aria-describedby="DataTables_Table_1_info" style="width: 100%;">
                         <thead class="border-top">
                             <tr>
-                                <th class="sorting_disabled dt-checkboxes-cell dt-checkboxes-select-all" rowspan="1"
-                                    colspan="1" data-col="1" aria-label="">
-                                    <input type="checkbox" class="form-check-input">
-                                </th>
                                 <th tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1">
-                                    recipe
+                                    Unit
                                 </th>
                                 {{-- <th tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1">
                                     category
@@ -79,38 +64,26 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="odd">
-                                <td class="  dt-checkboxes-cell"><input type="checkbox"
-                                        class="dt-checkboxes form-check-input"></td>
-                                <td class="sorting_1">
-                                    <div class="d-flex justify-content-start align-items-center product-name">
-                                        <div class="avatar-wrapper">
-                                            <div class="avatar avatar me-2 rounded-2 bg-label-secondary"><img
-                                                    src="{{ asset('/assets/img/ecommerce-images/product-9.png') }}"
-                                                    alt="Product-9" class="rounded-2"></div>
+                            @foreach ($units as $u)
+                                <tr class="odd">
+                                    <td class="sorting_1">
+                                        <div class="d-flex justify-content-start align-items-center product-name">
+                                            <div class="d-flex flex-column">
+                                                <h6 class="text-body text-nowrap mb-0">{{ $u->name }}</h6>
+                                            </div>
                                         </div>
-                                        <div class="d-flex flex-column">
-                                            <h6 class="text-body text-nowrap mb-0">Air Jordan</h6><small
-                                                class="text-muted text-truncate d-none d-sm-block">Air Jordan is a line of
-                                                basketball shoes produced by Nike</small>
+                                    </td>
+                                    <td>
+                                        <div class="d-inline-block text-nowrap">
+                                            <button class="btn btn-sm btn-icon">
+                                                <i class="ti ti-edit"></i>
+                                            </button><button class="btn btn-sm btn-icon delete-record">
+                                                <i class="ti ti-trash"></i>
+                                            </button>
                                         </div>
-                                    </div>
-                                </td>
-                                {{-- <td><span class="text-truncate d-flex align-items-center"><span
-                                            class="avatar-sm rounded-circle d-flex justify-content-center align-items-center bg-label-success me-2"><i
-                                                class="ti ti-shoe ti-xs"></i></span>Shoes</span></td>
-
-                                <td><span class="badge bg-label-danger" text-capitalized="">Inactive</span></td> --}}
-                                <td>
-                                    <div class="d-inline-block text-nowrap">
-                                        <button class="btn btn-sm btn-icon">
-                                            <i class="ti ti-edit"></i>
-                                        </button><button class="btn btn-sm btn-icon delete-record">
-                                            <i class="ti ti-trash"></i>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                     <div class="row mx-2">

@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreateRecipe;
-use App\Models\Recipe;
+use App\Http\Requests\StoreUnitRequest;
+use App\Models\Unit;
 use Illuminate\Http\Request;
 
-class RecipeController extends Controller
+class UnitController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view("recipe.index");
+        return view("units.index", ['units' => Unit::all()]);
     }
 
     /**
@@ -21,16 +21,16 @@ class RecipeController extends Controller
      */
     public function create()
     {
-        return view("recipe.create");
+        return view("units.create");
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(CreateRecipe $request)
+    public function store(StoreUnitRequest $request)
     {
-        Recipe::create($request->validated());
-        return redirect()->route("recipe.index")->with("success", "");
+        Unit::create($request->validated());
+        return redirect()->route("unit.index")->with("success","");
     }
 
     /**

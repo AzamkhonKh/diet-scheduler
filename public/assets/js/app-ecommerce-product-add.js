@@ -11,15 +11,17 @@
   const commentEditor = document.querySelector('.comment-editor');
 
   if (commentEditor) {
-    new Quill(commentEditor, {
+    var quilCommentCreate = new Quill(commentEditor, {
       modules: {
         toolbar: '.comment-toolbar'
       },
-      placeholder: 'Product Description',
+      placeholder: 'Recipe Description',
       theme: 'snow'
     });
+    quilCommentCreate.on('text-change', function() {
+      $('#quil-replicate').val(quilCommentCreate.getText());
+    });
   }
-
   // previewTemplate: Updated Dropzone default previewTemplate
 
   // ! Don't change it unless you really know what you are doing

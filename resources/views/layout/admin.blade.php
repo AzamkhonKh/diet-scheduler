@@ -63,7 +63,7 @@
                                     fill="#7367F0" />
                             </svg>
                         </span>
-                        <span class="app-brand-text demo menu-text fw-bold">Vuexy</span>
+                        <span class="app-brand-text demo menu-text fw-bold">Custom</span>
                     </a>
 
                     <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
@@ -76,7 +76,7 @@
 
                 <ul class="menu-inner py-1">
                     <!-- Dashboards -->
-                    <li class="menu-item">
+                    {{-- <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons ti ti-smart-home"></i>
                             <div data-i18n="Dashboards">Dashboards</div>
@@ -89,12 +89,16 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
+                    </li> --}}
 
                     <li class="menu-item">
                         <a href="{{ route('recipe.index') }}" class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-mail"></i>
-                            <div data-i18n="Email">Recipes</div>
+                            <div>Recipes</div>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="{{ route('unit.index') }}" class="menu-link">
+                            <div>Unit</div>
                         </a>
                     </li>
 
